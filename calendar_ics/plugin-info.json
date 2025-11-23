@@ -1,0 +1,5 @@
+{
+    "display_name": "Calendar ICS",
+    "id": "calendar_ics",
+    "class": "CalendarICS"
+}

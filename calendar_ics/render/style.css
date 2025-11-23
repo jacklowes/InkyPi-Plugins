@@ -1,0 +1,243 @@
+/* Spectra 6 Colors: Black, White, Red, Green, Blue, Yellow, Orange */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.calendar-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.header {
+    border-bottom: 4px solid black;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-shrink: 0;
+}
+
+.header h1 {
+    margin: 0;
+    color: black;
+}
+
+.updated-at {
+    color: #444;
+}
+
+.event-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.event-item {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.event-time {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    color: blue;
+    font-weight: bold;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    overflow: hidden;
+    min-width: 0;
+    /* Critical for text-overflow to work in flex child */
+}
+
+.event-details .summary {
+    font-weight: bold;
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.event-details .location {
+    color: red;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.no-events {
+    font-size: 36px;
+    color: #666;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* --- Default Fallback (matches density-medium) --- */
+.header h1 {
+    font-size: 36px;
+}
+
+.updated-at {
+    font-size: 16px;
+}
+
+.event-item {
+    padding: 8px 0;
+    margin-bottom: 8px;
+}
+
+.event-time {
+    width: 100px;
+}
+
+.event-time .date {
+    font-size: 20px;
+}
+
+.event-time .time {
+    font-size: 28px;
+}
+
+.event-details .summary {
+    font-size: 28px;
+}
+
+.event-details .location {
+    font-size: 20px;
+}
+
+/* --- Dynamic Scaling Rules --- */
+
+/* Low Density (1-3 events) - BIG TEXT */
+.density-low .header h1 {
+    font-size: 48px;
+}
+
+.density-low .updated-at {
+    font-size: 20px;
+}
+
+.density-low .event-item {
+    padding: 15px 0;
+    margin-bottom: 15px;
+}
+
+.density-low .event-time {
+    width: 140px;
+}
+
+.density-low .event-time .date {
+    font-size: 28px;
+}
+
+.density-low .event-time .time {
+    font-size: 42px;
+}
+
+.density-low .event-details .summary {
+    font-size: 42px;
+}
+
+.density-low .event-details .location {
+    font-size: 28px;
+}
+
+/* Medium Density (4-6 events) - MEDIUM TEXT */
+/* Adjusted to be slightly smaller to ensure 6 events fit */
+.density-medium .header h1 {
+    font-size: 36px;
+}
+
+.density-medium .updated-at {
+    font-size: 16px;
+}
+
+.density-medium .event-item {
+    padding: 8px 0;
+    margin-bottom: 8px;
+}
+
+.density-medium .event-time {
+    width: 100px;
+}
+
+.density-medium .event-time .date {
+    font-size: 20px;
+}
+
+.density-medium .event-time .time {
+    font-size: 28px;
+}
+
+.density-medium .event-details .summary {
+    font-size: 28px;
+}
+
+.density-medium .event-details .location {
+    font-size: 20px;
+}
+
+/* High Density (7+ events) - SMALL TEXT */
+.density-high .header h1 {
+    font-size: 28px;
+}
+
+.density-high .updated-at {
+    font-size: 14px;
+}
+
+.density-high .event-item {
+    padding: 4px 0;
+    margin-bottom: 4px;
+}
+
+.density-high .event-time {
+    width: 80px;
+}
+
+.density-high .event-time .date {
+    font-size: 16px;
+}
+
+.density-high .event-time .time {
+    font-size: 20px;
+}
+
+.density-high .event-details .summary {
+    font-size: 20px;
+}
+
+.density-high .event-details .location {
+    font-size: 16px;
+}

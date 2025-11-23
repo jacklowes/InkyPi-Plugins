@@ -1,0 +1,30 @@
+{% extends "plugin.html" %}
+
+{% block content %}
+<div class="calendar-container {{ density_class }}">
+    <div class="header">
+        <h1>Upcoming Events</h1>
+        <span class="updated-at">Updated: {{ updated_at }} ({{ density_class }})</span>
+    </div>
+    <ul class="event-list">
+        {% if events %}
+        {% for event in events %}
+        <li class="event-item">
+            <div class="event-time">
+                <span class="date">{{ event.start_time.strftime('%a, %b %d') }}</span>
+                <span class="time">{{ event.start_time.strftime('%H:%M') }}</span>
+            </div>
+            <div class="event-details">
+                <span class="summary">{{ event.summary }}</span>
+                {% if event.location %}
+                <span class="location">{{ event.location }}</span>
+                {% endif %}
+            </div>
+        </li>
+        {% endfor %}
+        {% else %}
+        <li class="no-events">No upcoming events found.</li>
+        {% endif %}
+    </ul>
+</div>
+{% endblock %}

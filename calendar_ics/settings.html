@@ -1,0 +1,19 @@
+<div class="form-group">
+    <label for="ics_url">ICS URL</label>
+    <input type="text" class="form-control" id="ics_url" name="ics_url" placeholder="https://example.com/calendar.ics" required>
+    <small class="form-text text-muted">The URL of your ICS calendar file (e.g., from Outlook, Google Calendar).</small>
+</div>
+<div class="form-group">
+    <label for="event_limit">Event Limit</label>
+    <input type="number" class="form-control" id="event_limit" name="event_limit" value="5" min="1" max="20">
+    <small class="form-text text-muted">Number of upcoming events to display.</small>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (loadPluginSettings) {
+            document.getElementById('ics_url').value = pluginSettings.ics_url || '';
+            document.getElementById('event_limit').value = pluginSettings.event_limit || 5;
+        }
+    });
+</script>
